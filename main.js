@@ -65,11 +65,28 @@ document.getElementById("submit_user_info").onclick = function () {
   document.getElementById("user_email").textContent = rawEmail;
   document.getElementById("user_password").textContent = rawPassword;
   document.getElementById("user_creation_date").textContent = rawDate;
+// Preenche a tabela (mesma ordem do bloco infos)
+document.getElementById("t-name").textContent = name;
+document.getElementById("t-surname").textContent = surname;
+document.getElementById("t-role").textContent = type;
+document.getElementById("t-username").textContent = rawUsername;
+document.getElementById("t-email").textContent = rawEmail;
+document.getElementById("t-password").textContent = rawPassword;
+document.getElementById("t-creationDate").textContent = rawDate;
+
 };
 
 document.getElementById("clear").onclick = function () {
+  // limpa textarea
   document.getElementById("user_info").value = "";
-  document.querySelectorAll("#infos span[id]").forEach((span) => {
+
+  // limpa bloco infos
+  document.querySelectorAll("#infos span").forEach(span => {
     span.textContent = "";
+  });
+
+  // limpa tabela
+  document.querySelectorAll("#infos-table td").forEach(td => {
+    td.textContent = "";
   });
 };
